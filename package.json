@@ -7,5 +7,8 @@
   ],
   "scripts": {
     "start": "concurrently \"npm run start --workspace=frontend\" \"npm run start --workspace=backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }
