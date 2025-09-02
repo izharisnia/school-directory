@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import api from '../utils/api';
+import axios from 'axios';
 
 export default function AddSchool() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -19,7 +19,7 @@ export default function AddSchool() {
       if (data.image?.[0]) form.append('image', data.image[0]);
 
       // Using a relative path for the API endpoint
-      await api.post('/api/schools', form, { headers: { 'Content-Type': 'multipart/form-data' }});
+      await axios.post('/api/schools', form, { headers: { 'Content-Type': 'multipart/form-data' }});
       
       setOk('✅ School added successfully!');
       reset();

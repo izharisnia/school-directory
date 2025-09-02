@@ -3,10 +3,12 @@ import { listSchools, getSchool, createSchool } from '../controllers/schoolContr
 import { uploadMemory } from '../middleware/uploadToCloud.js';
 
 const router = Router();
+
+// Corrected GET routes
 router.get('/schools', listSchools);
 router.get('/schools/:id', getSchool);
 
-// use uploadMemory.single('image') so req.file is available in memory
+// Corrected POST route (from previous fix)
 router.post('/schools', uploadMemory.single('image'), createSchool);
 
 export default router;
