@@ -13,12 +13,14 @@ export default function AddSchool() {
     setLoading(true);
     try {
       const form = new FormData();
-      for (const key of ['name','address','city','state','contact','email_id','board','hostel','type','medium']) {
+      for (const key of ['name', 'address', 'city', 'state', 'contact', 'email_id', 'board', 'hostel', 'type', 'medium']) {
         form.append(key, data[key]);
       }
       if (data.image?.[0]) form.append('image', data.image[0]);
 
+      // Using a relative path for the API endpoint
       await api.post('/api/schools', form, { headers: { 'Content-Type': 'multipart/form-data' }});
+      
       setOk('✅ School added successfully!');
       reset();
       setPreview(null);
@@ -34,7 +36,6 @@ export default function AddSchool() {
       <h2 className="page-title">Add School</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="form-card">
         <div className="form-grid">
-
           <label>
             School Name
             <input {...register('name', { required: true, minLength: 2 })} placeholder="Green Valley Public School" />

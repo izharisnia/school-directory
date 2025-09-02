@@ -13,12 +13,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(schoolRoutes);
+// Correctly map your API routes under the /api path
+app.use('/api', schoolRoutes);
 
 async function start() {
-  await connectDB();
-  await sequelize.sync(); // sync models
-  app.listen(PORT, () => console.log(`✅ API listening on http://localhost:${PORT}`));
+  await connectDB();
+  await sequelize.sync(); // sync models
+  app.listen(PORT, () => console.log(`✅ API listening on http://localhost:${PORT}`));
 }
 
 start();
