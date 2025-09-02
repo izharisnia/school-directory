@@ -4,7 +4,8 @@ export default function SchoolCard({ school }) {
   return (
     <div className="card">
       <img
-        src={`http://localhost:4000/${school.image}`}
+        // Change this URL
+        src={`/api/schools/${school.image}`} 
         alt={school.name}
         className="card-img"
       />

@@ -5,7 +5,7 @@ export default function Home() {
   const [schools, setSchools] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/schools")
+    fetch("/api/schools")
       .then(res => res.json())
       .then(data => setSchools(data.slice(0, 3)));
   }, []);

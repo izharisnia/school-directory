@@ -11,13 +11,14 @@ export default function SchoolDetail() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:4000/schools/${id}`)
+      fetch(`/api/schools/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setSchool(data);
 
+
           // fetch related schools from same city
-          fetch("http://localhost:4000/schools")
+          fetch("/api/schools")
             .then((res) => res.json())
             .then((all) =>
               setRelated(
