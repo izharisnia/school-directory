@@ -4,5 +4,8 @@
   "workspaces": [
     "frontend",
     "backend"
-  ]
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start --workspace=frontend\" \"npm run start --workspace=backend\""
+  }
 }
