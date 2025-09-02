@@ -17,7 +17,7 @@ export default function ShowSchools() {
   const [medium, setMedium] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/schools")
+    fetch("/api/schools")
       .then(res => res.json())
       .then(data => setSchools(data));
   }, []);
