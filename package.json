@@ -1,0 +1,8 @@
+{
+  "name": "school-directory",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
+}

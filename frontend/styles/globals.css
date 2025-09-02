@@ -1,0 +1,336 @@
+/* your provided CSS verbatim */
+:root{
+  --bg:#f9fafb; --text:#111827; --muted:#6b7280; --accent:#ef4444;
+  --card:#ffffff; --stroke:#e5e7eb; --glass:rgba(255,255,255,0.8);
+}
+:root.dark{
+  --bg:#0f172a; --text:#f9fafb; --muted:#9ca3af; --accent:#f97316;
+  --card:#1e293b; --stroke:#334155; --glass:rgba(0,0,0,0.6);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#__next{height:100%;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;border-radius:8px}
+
+.container{max-width:1200px;margin:0 auto;padding:24px}
+
+/* Navbar */
+.navbar{
+  position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+  padding:16px 24px;background:var(--glass);backdrop-filter:blur(12px);border-bottom:1px solid var(--stroke);
+}
+.brand{font-size:20px;font-weight:700;color:var(--accent)}
+.nav-links a{margin-left:20px;font-weight:500;opacity:.9}
+.nav-links a:hover{opacity:1;color:var(--accent)}
+
+/* Hero */
+.hero{display:grid;place-items:center;min-height:50vh;text-align:center}
+.hero h1{font-size:42px;font-weight:800;margin-bottom:8px}
+.hero p{color:var(--muted);font-size:18px;max-width:640px;margin:0 auto 24px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 20px;border-radius:12px;border:1px solid var(--stroke);background:var(--card);font-weight:600;cursor:pointer}
+.btn.primary{background:var(--accent);color:white;border:none;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.btn.primary:hover{opacity:.9}
+.btn:hover{transform:translateY(-2px);transition:.2s}
+
+/* Filters */
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0;justify-content:space-between}
+.filters input,.filters select{
+  padding:10px 14px;border-radius:10px;border:1px solid var(--stroke);background:var(--card);
+  color:var(--text);font-size:15px;min-width:200px;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px; /* more breathing room between cards */
+  margin: 40px auto;
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+/* Card Improvements */
+.card {
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  background: var(--card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  min-height: 360px;
+  padding: 16px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.card-sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+
+/* Detail Page */
+.detail{display:grid;grid-template-columns:1fr 400px;gap:32px;align-items:start;margin-top:32px}
+.detail-img{width:100%;border-radius:16px;object-fit:cover;border:1px solid var(--stroke);max-height:320px}
+.detail-info h2{font-size:28px;margin-bottom:8px}
+.contact-box{
+  border:1px solid var(--stroke);padding:20px;border-radius:12px;background:var(--card);margin-top:12px
+}
+.contact-box h3{margin-bottom:12px;font-size:18px}
+.contact-box p{margin:6px 0;font-size:15px}
+.related{margin-top:48px}
+.related h3{margin-bottom:16px}
+
+/* Forms */
+.form{display:grid;gap:14px;max-width:720px;margin:0 auto}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-size:15px;font-weight:500}
+input,select{padding:10px;border-radius:10px;border:1px solid var(--stroke);background:var(--card);color:var(--text)}
+input[type="file"]{padding:4px}
+.form button{margin-top:12px}
+.page-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 24px 0 32px;
+  color: var(--text);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Accent underline */
+.page-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  margin: 8px auto 0;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.filter-card {
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.filter-title {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+/* Form card layout */
+.form-card {
+  max-width: 850px;
+  margin: 36px auto;
+  padding: 32px;
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-grid input {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--stroke);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.preview {
+  margin: 20px 0;
+  max-width: 220px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 36px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Filters layout */
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.filters-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+}
+.filters-grid select,
+.filters-grid input {
+  margin-top: 6px;
+}
+
+/* Ensure selects look like inputs */
+.input,
+select.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus,
+select.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 107, 61, 0.3);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Consistent spacing for dropdown arrow */
+select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 32px;
+}
+
+.note {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Footer */
+.footer{ margin-top:64px;padding:24px;text-align:center;color:var(--muted);border-top:1px solid var(--stroke);font-size:14px}
+
+/* Responsive */
+@media (max-width:900px){
+  .detail{grid-template-columns:1fr}
+}
+
+/* Bottom CTA section */
+.cta-bottom {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+  padding: 48px 24px;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--stroke);
+}
+
+.cta-bottom h2 { margin-bottom: 12px; }
+.cta-bottom .subtitle { margin-bottom: 20px; font-size: 15px; }
+
+/* Navbar improvements (from your CSS) */
+.navbar { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--stroke); backdrop-filter: blur(8px); background: var(--glass); }
+.brand { font-weight: 800; font-size: 20px; cursor: pointer; }
+.nav-links { display: flex; gap: 20px; font-weight: 500; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+
+/* Search box */
+.search-box input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* Toggle button */
+.toggle {
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
